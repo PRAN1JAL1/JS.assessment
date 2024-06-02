@@ -1,0 +1,54 @@
+/*
+Assessment Requirements
+1. Create a variable that can hold a number of NFT's. What type of variable might this be?
+2. Create an object inside your mintNFT function that will hold the metadata for your NFTs. 
+   The metadata values will be passed to the function as parameters. When the NFT is ready, 
+   you will store it in the variable you created in step 1
+3. Your listNFTs() function will print all of your NFTs metadata to the console (i.e. console.log("Name: " + someNFT.name))
+4. For good measure, getTotalSupply() should return the number of NFT's you have created
+*/
+
+// create a variable to hold your NFT's
+let FriendsSeris = [];//declared an array 
+
+// this function will take in some values as parameters, create an
+// NFT object using the parameters passed to it for its metadata, 
+// and store it in the variable above.
+function mintNFT (realName, character, role, haircolour) {
+    const NFT = {
+        "realName": realName,
+        "character": character,
+        "role": role,
+        "haircolour": haircolour,
+    };
+    FriendsSeris.push(NFT);//newly created object is pushed to the arry 
+    console.log("Minted: " + realName);//successful minting and characters real name
+}
+
+// create a "loop" that will go through an "array" of NFT's
+// and print their metadata with console.log()
+function listNFTs () {
+    for (let i= 0; i< FriendsSeris.length; i++) {
+        console.log("\nID: \t\t" + (i + 1));
+        console.log("Name: \t\t" + FriendsSeris[i].realName);
+        console.log("Character: \t" + FriendsSeris[i].character);
+        console.log("role: \t\t" + FriendsSeris[i].role);
+        console.log("haircolour: " + FriendsSeris[i].haircolour);
+    }
+}
+
+// print the total number of NFTs we have minted to the console
+function getTotalSupply() {
+    console.log("\n" + FriendsSeris.length);
+
+}
+
+// call your functions below this line
+mintNFT("Matthew Steven LeBlanc","joey","actor","Light brown");
+mintNFT("Matthew Perry","Chandler","Saecastic guy","Light brown");
+mintNFT("David Schwimmer","Ross","Paleontologist"," brown");
+mintNFT("Courteney","Monica","Chef","Light brown");
+mintNFT("Jennifer Aniston","Rachel","Fashionista","brown");
+mintNFT("Lisa Kudrow","Phoebe","Masus","Light blond");
+listNFTs();
+getTotalSupply();
